@@ -9,8 +9,7 @@ from pycallgraph.globbing_filter import GlobbingFilter
 def record_call_graph(request):
     import time
     current_millis = int(round(time.time() * 1000))
-    with PyCallGraph(output=GraphvizOutput(dot_file='./dotFiles/%s_%s.dot' % (request._pyfuncitem.name,
-                                                                              current_millis)),
+    with PyCallGraph(output=GraphvizOutput(dot_file='./dotFiles/%s.dot' % current_millis),
                      config=Config(debug=True,
                                    trace_filter=GlobbingFilter(
                                        exclude=['pycallgraph.*', 'test.*', '*.yml', "_pytest.*", "numpy.*"],
