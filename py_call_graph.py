@@ -16,7 +16,6 @@ def record_call_graph(request):
             temp = temp.replace("/", ".")
             temp = temp.replace(".py", ".*")
             temp = temp.replace("\n", "")
-            cur_input = "."
             if len(temp) > 0:
                 total_input_files.add("mitmproxy." + temp)
 
